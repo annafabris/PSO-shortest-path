@@ -4,5 +4,5 @@ This program uses the Particle Swarm Optimization (PSO) algorithm to find the sh
 
 ![Alt text](results/example_code.png?raw=true)
 <a href="url"><img src="https://github.com/annafabris/PSO-shortest-path/tree/main/results/example_code.png" align="left" height="48" width="48" ></a>
-
+![test image size]<img src="https://github.com/annafabris/PSO-shortest-path/tree/main/results/example_code.png" width="400" height="790">
 ![Alt text](results/example_code.png?raw=true){:height="36px" width="36px"}
