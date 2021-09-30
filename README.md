@@ -6,3 +6,4 @@ This program uses the Particle Swarm Optimization (PSO) algorithm to find the sh
 
 ![image](https://github.com/annafabris/PSO-shortest-path/blob/master/results/example_code.png)
 <img src="https://github.com/annafabris/PSO-shortest-path/blob/master/results/example_code.png" width="100" height="100">
+![](../../blob/master/results/example_code.png)
