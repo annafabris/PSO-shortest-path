@@ -2,5 +2,6 @@
 
 This program uses the Particle Swarm Optimization (PSO) algorithm to find the shortest path between two given poins, avoiding all obstacles.
 
-[[https://github.com/annafabris/PSO-shortest-path/tree/main/results/example_code.png|width=100px]]
+<img src="https://github.com/annafabris/PSO-shortest-path/tree/main/results/example_code.png" width="100" height="100">
+
 
