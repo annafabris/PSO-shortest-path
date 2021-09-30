@@ -56,43 +56,4 @@ class Obstacle_Circle:
             int: x distance between point and center.
         """
 
-        return x - self.C.x    
-
-    def segment_in_circle(self, p, q):
-        """
-        The function checks if the segment intersect the circle.
-         
-        Parameters:
-            p (int): The first vertex of the segment.
-            q (int): The second vertex of the segment.
-        
-        Returns:
-            boolean: if the segment intersect the circle.
-        """
-
-        a, b, c = lineFromPoints(p, q)
-
-        # Checking if the distance of line from the center is less than the radius.
-        if (self.r > ((abs(a * self.C.x + b * self.C.y + c)) / math.sqrt(a * a + b * b))):
-            return True
-        else:
-            return False
-    
-def lineFromPoints(p, q):
-    """
-    The function checks if the segment intersect the circle.
-     
-    Parameters:
-        p (Point): The first vertex of the segment.
-        q (Point): The second vertex of the segment.
-    
-    Returns:
-        boolean: if the segment intersect the circle
-        boolean: if the segment intersect the circle
-        boolean: if the segment intersect the circle
-    """
-
-    a = q.y - p.y
-    b = p.x - q.x
-    c = a*(p.x) + b*(p.y)
-    return a, b, c
+        return x - self.C.x

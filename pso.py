@@ -88,26 +88,6 @@ def loss_function(x):
     z = z + (x[DIM - 1, 0] - END.x)**2 + (x[DIM - 1, 1] - END.y)**2 
     return math.sqrt(z)
 
-def is_all_valid(circles, path):
-    """
-    Check if the entire path is valid (i.e. doesn't go into obstacles).
-    
-    Parameters:
-        circles (List[Obstacle_Circle]): The list of obstacles.
-        path (List[Point]): The list of the path.
-  
-    Returns:
-        boolean: wheter the path is valid
-    """
-
-    for i in range(len(path) - 1):
-        point_p = ob.Point(path[i, 0], path[i, 1])
-        after_point_p = ob.Point(path[i - 1, 0], path[i - 1, 1])
-        for i in range(len(circles)):
-            if(circles[i].segment_in_circle(point_p, after_point_p)):
-                return False
-        return True        
-
 def is_valid(circles, p):
     """
     Check if the point p is valid (i.e. doesn't go into obstacles).
@@ -181,13 +161,12 @@ def particle_swarm_optimization(max_iterations, swarm_size, max_vel, step_size, 
                 dim_i = dim_i + 1
             #for the new location, check if this is a new local or global best (if it's valid)
             particle_error = loss_function(particles_loc[particle_i,:])
-            if(is_all_valid(circles, particles_loc[particle_i,:,:])):
-                if (particle_error < particles_lowest_loss[particle_i]):     #local best
-                    particles_lowest_loss[particle_i] = particle_error
-                    particles_best_location[particle_i,:] = particles_loc[particle_i,:].copy()
-                if (particle_error < global_lowest_loss):                    #global best
-                    global_lowest_loss = particle_error
-                    global_best_location = particles_loc[particle_i,:].copy()
+            if (particle_error < particles_lowest_loss[particle_i]):     #local best
+                particles_lowest_loss[particle_i] = particle_error
+                particles_best_location[particle_i,:] = particles_loc[particle_i,:].copy()
+            if (particle_error < global_lowest_loss):                    #global best
+                global_lowest_loss = particle_error
+                global_best_location = particles_loc[particle_i,:].copy()
 
         best_location = (global_best_location.copy())
     return best_location
