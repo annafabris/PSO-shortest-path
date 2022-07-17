@@ -208,8 +208,8 @@ def particle_swarm_optimization(
                 particles_loc[particle_i, dim_i, 0] += particle_help.x
                 particles_loc[particle_i, dim_i, 1] += particle_help.y
                 if abs(particle_help.x) > 0.1 or abs(particle_help.y) > 0.1:
-                    dim_i = dim_i - 1
-                dim_i = dim_i + 1
+                    dim_i -= 1
+                dim_i += 1
             # for the new location, check if this is a new local or global best (if it's valid)
             particle_error = loss_function(particles_loc[particle_i, :])
             if particle_error < particles_lowest_loss[particle_i]:  # local best
@@ -250,8 +250,8 @@ def main():
     )
     print("100% completed!")
     plot_graph(best_location)
-    for i in range(len(obstacles)):
-        plot_circle(obstacles[i])
+    for obstacle in obstacles:
+        plot_circle(obstacle)
     plt.savefig("results", dpi=300)
     plt.show()
 
